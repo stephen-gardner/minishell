@@ -6,7 +6,7 @@
 /*   By: sgardner <stephenbgardner@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/09 16:16:41 by sgardner          #+#    #+#             */
-/*   Updated: 2017/12/16 02:02:18 by sgardner         ###   ########.fr       */
+/*   Updated: 2017/12/16 15:59:11 by sgardner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_bool			bcd(t_shell *ms)
 	int			i;
 
 	prev = (prev) ? prev : ft_strdup(get_env("HOME"));
-	if (!prev)
+	if (!prev || (!*prev && !(prev = ft_strdup("/"))))
 		mem_error();
 	argv = ms->argv;
 	i = 0;
