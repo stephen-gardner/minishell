@@ -6,15 +6,13 @@
 /*   By: sgardner <stephenbgardner@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 17:17:12 by sgardner          #+#    #+#             */
-/*   Updated: 2017/12/15 19:36:52 by sgardner         ###   ########.fr       */
+/*   Updated: 2017/12/16 02:25:35 by sgardner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINI_H
 # define MINI_H
 # include "ft_memmgr.h"
-
-# include <stdio.h>
 
 typedef struct	s_shell
 {

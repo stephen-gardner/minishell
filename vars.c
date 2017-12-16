@@ -6,7 +6,7 @@
 /*   By: sgardner <stephenbgardner@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/13 16:09:02 by sgardner          #+#    #+#             */
-/*   Updated: 2017/12/16 01:21:35 by sgardner         ###   ########.fr       */
+/*   Updated: 2017/12/16 02:42:41 by sgardner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	process_var(t_mchain *mchain, char **arg, int *i)
 		len++;
 	if (!(key = ft_strndup(pos, len)) || !ft_mlappend(mchain, *arg, *i))
 		mem_error();
-	if ((var = get_env(key)) && !ft_mlappend(mchain, var, ft_strlen(var)))
+	if (*(var = get_env(key)) && !ft_mlappend(mchain, var, ft_strlen(var)))
 		mem_error();
 	*arg += *i + 1 + len;
 	*i = 0;

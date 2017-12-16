@@ -6,7 +6,7 @@
 /*   By: sgardner <stephenbgardner@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 06:25:20 by sgardner          #+#    #+#             */
-/*   Updated: 2017/12/12 06:25:32 by sgardner         ###   ########.fr       */
+/*   Updated: 2017/12/16 02:38:05 by sgardner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_bool	becho(t_shell *ms)
 	while (argv[i])
 	{
 		write(1, argv[i], ft_strlen(argv[i]));
-		if (argv[i + 1])
+		if (*argv[i] && argv[i + 1])
 			write(1, " ", 1);
 		i++;
 	}
