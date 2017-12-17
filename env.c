@@ -6,7 +6,7 @@
 /*   By: sgardner <stephenbgardner@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 13:54:24 by sgardner          #+#    #+#             */
-/*   Updated: 2017/12/16 01:22:05 by sgardner         ###   ########.fr       */
+/*   Updated: 2017/12/16 16:06:01 by sgardner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void			set_env(t_shell *ms, char *key, char *val)
 	int			key_len;
 
 	key_len = ft_strlen(key);
-	if (!(pair = (char *)malloc(key_len + ft_strlen(val) + 2)))
+	if (!(pair = malloc(key_len + ft_strlen(val) + 2)))
 		mem_error();
 	tmp = ft_stpcpy(pair, key);
 	*tmp++ = '=';

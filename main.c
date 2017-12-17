@@ -6,7 +6,7 @@
 /*   By: sgardner <stephenbgardner@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 00:12:30 by sgardner          #+#    #+#             */
-/*   Updated: 2017/12/16 00:48:38 by sgardner         ###   ########.fr       */
+/*   Updated: 2017/12/16 16:12:34 by sgardner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_shell	*get_shell(char **env)
 
 	if (!ms)
 	{
-		if (!(ms = (t_shell *)ft_memalloc(sizeof(t_shell))))
+		if (!(ms = ft_memalloc(sizeof(t_shell))))
 			mem_error();
 		load_env(ms, env);
 	}

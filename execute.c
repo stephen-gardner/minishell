@@ -6,7 +6,7 @@
 /*   By: sgardner <stephenbgardner@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 20:03:11 by sgardner          #+#    #+#             */
-/*   Updated: 2017/12/15 23:20:28 by sgardner         ###   ########.fr       */
+/*   Updated: 2017/12/16 16:12:42 by sgardner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_bool		find_app(t_shell *ms, char *path)
 
 	if (access(path, F_OK) < 0)
 		return (FALSE);
-	if (!(stats = (struct stat *)ft_memalloc(sizeof(struct stat))))
+	if (!(stats = ft_memalloc(sizeof(struct stat))))
 		mem_error();
 	if (access(path, X_OK) < 0
 		|| stat(path, stats) < 0
