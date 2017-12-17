@@ -2,8 +2,9 @@
 NAME = minishell
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-INC = -I libft/inc
+INC = -I inc -I libft/inc
 LIBFT = libft/libft.a
+SRC_DIR = src
 SRC = \
 	builtin_cd\
 	builtin_echo\
@@ -16,7 +17,8 @@ SRC = \
 	parse\
 	util\
 	vars
-OBJ = $(patsubst %, %.o, $(SRC))
+OBJ_DIR = $(SRC_DIR)/obj
+OBJ = $(patsubst %, $(OBJ_DIR)/%.o, $(SRC))
 
 all: $(NAME)
 
@@ -29,12 +31,13 @@ $(LIBFT):
 	@echo "Building $@..."
 	@make -C libft
 
-%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
 	@echo "Compiling $<..."
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@make -C libft clean
 	@echo "Object files removed."
 
